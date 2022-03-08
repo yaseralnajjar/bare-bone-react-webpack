@@ -1,13 +1,12 @@
-const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  devServer: {
-    compress: true,
-    port: 3000,
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
+  mode: "production",
+  devtool: "source-map",
+
+  output: {
+    filename: "[chunkhash].js",
   },
 
   module: {
@@ -24,20 +23,17 @@ module.exports = {
         test: /\.html$/,
         use: "html-loader",
       },
-      // Choose ONLY one: first for plain CSS, second for for SASS
-      // {
-      //   test: /\.css$/,
-      //   use: ["style-loader", "css-loader"],
-      // },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
   },
+
   plugins: [
     new HTMLWebpackPlugin({
       template: "public/index.html",
     }),
+    new MiniCssExtractPlugin(),
   ],
 };
