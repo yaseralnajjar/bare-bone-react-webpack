@@ -1,0 +1,51 @@
+html,
+body {
+  background-color: #ecf3f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.counter-text {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.counter-value {
+  text-align: center;
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+
+  width: 5em;
+  max-width: 5.5em;
+  border: none;
+  border-radius: 30px;
+
+  background: linear-gradient(135deg, #656eea 0%, #737cf0 100%);
+  color: #ecf3f6;
+  box-shadow: -1px 3px 3px 0 rgba(80, 80, 80, 0.2);
+
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 28px;
+  margin-top: 15px;
+  padding: 10px 0px;
+
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  width: 5.2em;
+  box-shadow: -1px 6px 25px 0 rgba(120, 60, 20, 0.2);
+}
